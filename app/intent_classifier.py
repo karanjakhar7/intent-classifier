@@ -1,8 +1,12 @@
 import json
 from dotenv import load_dotenv
 from functools import partial
+import os
 
-load_dotenv("../.env")
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+
+load_dotenv(f"{parentdir}/.env")
 
 from openai import AzureOpenAI
 import os
